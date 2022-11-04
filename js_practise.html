@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        color: red;
+        list-style: none;
+        display: inline;
+        padding: 2px;
+    }
+    .odd{
+        background-color: yellow;
+    }
+</style>
+<body>
+    
+
+<h1> List of generated numbers</h1>
+
+<button id="btn"> Add numbers</button>
+
+
+<ul class="st">
+</ul>
+
+
+
+
+
+
+
+
+
+<script>
+
+// generate a list of 100 elements and add it to main elem in html doc when button is clicked
+
+let list = [];
+
+//populate the list with numbers first
+for (i = 1; i < 101; i++) {
+   list.push(i);
+} 
+
+//Adding a function to the button 
+//forEach loop that iterates through the list and created <li> elements
+//Finally <li> have innerText added and are appended to <ul> element
+
+let btn = document.getElementById("btn");
+let ul = document.querySelector("ul");
+
+
+btn.addEventListener("click", function(){
+    list.forEach(function(e){
+        var li= document.createElement('li');
+        var space = document.createElement('br');
+        li.innerText = e;
+        ul.append(li);
+        li.append(space);
+    
+        if (e % 2 == 0 && e != 0 ){       //Add yellow background to the odd numbers by adding "odd" style
+            li.classList.add("odd");
+        }
+    })
+})
+
+
+
+
+
+
+//complicate it with adding prime number "distingisher"
+
+</script>
+</body>
+</html>
