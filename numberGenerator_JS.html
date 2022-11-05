@@ -55,6 +55,8 @@ let btn = document.getElementById("btn");
 let ul = document.querySelector("ul");
 
 
+//Here goes the li creation by using forEach loop
+
 btn.addEventListener("click", function(){
     list.forEach(function(e){
         var li= document.createElement('li');
@@ -70,12 +72,23 @@ btn.addEventListener("click", function(){
 })
 
 
+/*  here goes map() array method that allows to do the same*/
+/*I just need to add button functionality */
 
 
+/*
+const listItems = list.map((item) => {
+    let listItem = document.createElement('li');
+    listItem.innerHTML = item;
+    return listItem;
+});
+
+listItems.forEach((item) => {
+    ul.append(item);
+})
 
 
-//complicate it with adding prime number "distingisher"
-
+*/
 </script>
 </body>
 </html>
